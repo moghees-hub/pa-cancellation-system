@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cancel Your Subscription | Physique Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #F7F9F4;
+    --surface:      #FFFFFF;
+    --border:       #E5E7EB;
+    --border-soft:  #F0F2EE;
+    --green:        #7FC838;
+    --green-dark:   #6BB02E;
+    --green-soft:   #F0F9E8;
+    --text:         #0A0A0A;
+    --text-muted:   #6B7280;
+    --text-light:   #9CA3AF;
+    --red:          #DC2626;
+    --red-soft:     #FEF2F2;
+    --shadow:       0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .brand-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .brand-tagline {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  main {
+    flex: 1;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .page-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    letter-spacing: -0.5px;
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+  }
+
+  .policy-banner {
+    background: var(--green-soft);
+    border: 1px solid #D7EBC2;
+    border-left: 3px solid var(--green);
+    padding: 18px 22px;
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 32px;
+    border-radius: 8px;
+  }
+
+  .policy-banner h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .policy-banner p {
+    font-size: 14px;
+    color: #1f2937;
+    line-height: 1.7;
+  }
+
+  .policy-banner strong { color: var(--text); font-weight: 600; }
+  .policy-banner a { color: var(--green-dark); font-weight: 600; }
+
+  .form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 40px 44px;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .form-section-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .form-row.full { grid-template-columns: 1fr; }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text);
+  }
+
+  label .req { color: var(--green-dark); margin-left: 2px; font-weight: 700; }
+
+  input:not([type="checkbox"]), select, textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    padding: 11px 14px;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  input:not([type="checkbox"]):focus, select:focus, textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(127,200,56,.15);
+  }
+
+  input::placeholder, textarea::placeholder { color: var(--text-light); }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+  .hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+
+  .consent-block {
+    background: var(--green-soft);
+    border: 1px solid #D7EBC2;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+  }
+
+  .consent-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .consent-item:last-child { margin-bottom: 0; }
+
+  .consent-checkbox {
+    width: 18px; height: 18px;
+    min-width: 18px;
+    cursor: pointer;
+    margin-top: 1px;
+    accent-color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .consent-text {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .consent-text strong { color: var(--text); font-weight: 600; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--green);
+    color: var(--text);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background .15s, transform .1s, box-shadow .15s;
+    box-shadow: 0 2px 6px rgba(127,200,56,.25);
+  }
+
+  .submit-btn:hover { background: var(--green-dark); box-shadow: 0 4px 12px rgba(127,200,56,.35); }
+  .submit-btn:active { transform: translateY(1px); }
+  .submit-btn:disabled { background: #D1D5DB; color: #6B7280; cursor: not-allowed; box-shadow: none; }
+
+  .submit-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .submit-note strong { color: var(--text); }
+
+  .submit-error {
+    display: none;
+    background: var(--red-soft);
+    border: 1px solid #FECACA;
+    border-left: 3px solid var(--red);
+    color: #7F1D1D;
+    font-size: 13px;
+    line-height: 1.65;
+    padding: 14px 18px;
+    margin-top: 16px;
+    border-radius: 6px;
+  }
+
+  .submit-error strong { color: #991B1B; }
+
+  .field-error {
+    font-size: 12px;
+    color: var(--red);
+    display: none;
+  }
+
+  input.invalid, select.invalid, textarea.invalid {
+    border-color: var(--red);
+    background: var(--red-soft);
+  }
+
+  #success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 560px;
+    padding: 60px 20px;
+  }
+
+  .success-icon {
+    width: 72px; height: 72px;
+    background: var(--green-soft);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .success-icon svg { width: 34px; height: 34px; }
+
+  .success-ref {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+
+  .success-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+
+  .success-body {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  .success-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    padding: 18px 22px;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    box-shadow: var(--shadow);
+  }
+
+  .success-box strong { color: var(--text); font-weight: 600; }
+
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 22px 40px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  footer strong { color: var(--text); font-weight: 600; }
+
+  @media (max-width: 640px) {
+    .form-card { padding: 28px 22px; }
+    .form-row { grid-template-columns: 1fr; }
+    header { padding: 14px 20px; }
+    main { padding: 40px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">PA</div>
+  <div>
+    <div class="brand-name">Physique Academy</div>
+    <div class="brand-tagline">Online Coaching</div>
+  </div>
+</header>
+
+<main>
+
+  <div id="form-view">
+    <p class="page-eyebrow">Member Self-Service</p>
+    <h1 class="page-title">Cancel Your Subscription</h1>
+    <p class="page-subtitle">
+      Please complete this form to submit your cancellation request. All fields marked with <span style="color:var(--gold)">*</span> are required. Your request will be timestamped and logged automatically.
+    </p>
+
+    <div class="policy-banner">
+      <h3>Before You Continue</h3>
+      <p>
+        Cancellations are only available after completing your <strong>6-month minimum commitment</strong>.
+        You must give <strong>at least 1 calendar month's notice</strong>, aligned to your payment date.
+        <strong>At least one final payment will still be collected</strong> following submission of your request.
+        For full details, review your <a href="#" style="color:var(--gold)">Cancellation &amp; Billing Agreement</a>.
+      </p>
+    </div>
+
+    <div class="form-card">
+
+      <p class="form-section-title">Your Details</p>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="first_name">First Name <span class="req">*</span></label>
+          <input type="text" id="first_name" name="first_name" placeholder="e.g. James" autocomplete="given-name">
+          <span class="field-error" id="err_first_name">Please enter your first name</span>
+        </div>
+        <div class="field">
+          <label for="last_name">Last Name <span class="req">*</span></label>
+          <input type="text" id="last_name" name="last_name" placeholder="e.g. Williams" autocomplete="family-name">
+          <span class="field-error" id="err_last_name">Please enter your last name</span>
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+          <span class="field-error" id="err_email">Please enter a valid email address</span>
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" autocomplete="tel">
+          <span class="field-error" id="err_phone">Please enter your phone number</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <p class="form-section-title">Subscription Details</p>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="current_duration">Current Duration on the Program (months) <span class="req">*</span></label>
+          <input type="text" id="current_duration" name="current_duration" placeholder="e.g. 8">
+          <span class="field-error" id="err_current_duration">Please enter your current duration</span>
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="coach_name">Select Your Coach <span class="req">*</span></label>
+          <select id="coach_name" name="coach_name">
+            <option value="">Select your coach...</option>
+            <option value="Aaron Lake">Aaron Lake</option>
+            <option value="Adam Pritchard">Adam Pritchard</option>
+            <option value="Ashley Smith">Ashley Smith</option>
+            <option value="Ben Carlisle">Ben Carlisle</option>
+            <option value="Charlie Smith">Charlie Smith</option>
+            <option value="Daniel Gorse">Daniel Gorse</option>
+            <option value="Danny Smith">Danny Smith</option>
+            <option value="Felix Reuter">Felix Reuter</option>
+            <option value="George Armstrong">George Armstrong</option>
+            <option value="Jamie Gorse">Jamie Gorse</option>
+            <option value="Kris Aldred">Kris Aldred</option>
+            <option value="Luke Fielding">Luke Fielding</option>
+            <option value="Neil Chauhan">Neil Chauhan</option>
+            <option value="Sam Parker">Sam Parker</option>
+            <option value="Tyler Nixon">Tyler Nixon</option>
+            <option value="Zayne Cloete">Zayne Cloete</option>
+          </select>
+          <span class="field-error" id="err_coach_name">Please select your coach</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <p class="form-section-title">Cancellation Details</p>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="reason_category">Reason for Cancellation <span class="req">*</span></label>
+          <select id="reason_category" name="reason_category">
+            <option value="">Select a reason...</option>
+            <option value="Financial reasons">Financial reasons</option>
+            <option value="Injury">Injury</option>
+            <option value="Preference for in-person training">Preference for in-person training</option>
+            <option value="Struggling with consistency">Struggling with consistency</option>
+            <option value="Not seeing expected results">Not seeing expected results</option>
+            <option value="Not connecting with my coach">Not connecting with my coach</option>
+            <option value="Schedule/life changes">Schedule/life changes</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error" id="err_reason_category">Please select a reason</span>
+        </div>
+      </div>
+
+      <div class="form-row full" id="reason_other_row" style="display:none">
+        <div class="field">
+          <label for="reason_other">Please tell us your reason <span class="req">*</span></label>
+          <input type="text" id="reason_other" name="reason_other" placeholder="Type your reason here...">
+          <span class="field-error" id="err_reason_other">Please tell us your reason</span>
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="lower_cost_interest">If we offered a lower-cost program with continued training and nutrition support, but less 1-1 coaching, would you be interested in staying on? <span class="req">*</span></label>
+          <select id="lower_cost_interest" name="lower_cost_interest">
+            <option value="">Select an option...</option>
+            <option value="Yes - I'd like to hear more">Yes - I'd like to hear more</option>
+            <option value="Maybe - depends on the details">Maybe - depends on the details</option>
+            <option value="No - I'm set on canceling">No - I'm set on canceling</option>
+          </select>
+          <span class="field-error" id="err_lower_cost_interest">Please select an option</span>
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="field">
+          <label for="reason_detail">Additional Comments <span class="req">*</span></label>
+          <textarea id="reason_detail" name="reason_detail" placeholder="Please share any additional feedback or details to help us improve our service..."></textarea>
+          <span class="field-error" id="err_reason_detail">Please share some additional context</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="consent-block">
+        <div class="consent-item">
+          <input type="checkbox" class="consent-checkbox" id="consent_1">
+          <label for="consent_1" class="consent-text">
+            I confirm I have <strong>completed my 6-month minimum commitment</strong> and understand I cannot cancel before this period ends.
+          </label>
+        </div>
+        <div class="consent-item">
+          <input type="checkbox" class="consent-checkbox" id="consent_2">
+          <label for="consent_2" class="consent-text">
+            I understand that <strong>at least one final payment will be collected</strong> from the next billing date and I am not entitled to a refund.
+          </label>
+        </div>
+        <div class="consent-item">
+          <input type="checkbox" class="consent-checkbox" id="consent_3">
+          <label for="consent_3" class="consent-text">
+            I understand that <strong>this form is the official method</strong> of submitting a cancellation request. Requests made via WhatsApp, email, or verbally are not valid.
+          </label>
+        </div>
+      </div>
+      <span class="field-error" id="err_consent" style="display:none;margin-bottom:14px;display:block">Please tick all boxes above to continue</span>
+
+      <button class="submit-btn" id="submit-btn" onclick="handleSubmit(event)">
+        SUBMIT CANCELLATION REQUEST
+      </button>
+
+      <div class="submit-error" id="submit-error">
+        <strong>We couldn't submit your request.</strong> Please check your internet connection and try again. If this keeps happening, email <strong>support@physiqueacademy.com</strong> with your name and the time you tried to submit so we can record your request manually.
+      </div>
+
+      <p class="submit-note">
+        Your request will be timestamped and a confirmation sent to your email address.<br>
+        A team member will confirm your cancellation within <strong style="color:var(--white)">2 business days</strong>.
+      </p>
+
+    </div>
+  </div>
+
+  <div id="success-screen">
+    <div class="success-icon">
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="16" stroke="#3DAA6F" stroke-width="1.5"/>
+        <path d="M9 17.5l5.5 5.5 10.5-11" stroke="#3DAA6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="success-ref" id="ref-number">REF: PA-000000</p>
+    <h2 class="success-title">Request Received</h2>
+    <p class="success-body">
+      Your cancellation request has been submitted and timestamped. We've sent a confirmation to <strong id="confirm-email" style="color:var(--white)">your email address</strong>.
+    </p>
+    <div class="success-box">
+      <p><strong>What happens next:</strong></p>
+      <p style="margin-top:10px">A member of the Physique Academy team will review your request and send written confirmation within 2 business days, including your final payment date and the date your subscription ends.</p>
+      <p style="margin-top:10px">Please retain your reference number and confirmation email for your records.</p>
+      <p style="margin-top:14px; font-size:12px; color: #666">
+        Submitted: <strong id="submit-timestamp" style="color:#999"></strong>
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong style="color:var(--white)">Physique Academy</strong> &middot; Online Coaching<br>
+  For queries about your cancellation, contact your coach or email support.<br>
+  This page is the <strong style="color:var(--white)">only valid</strong> method for submitting cancellation requests.
+</footer>
+
+<script>
+  // Paste the GHL Inbound Webhook URL from Workflows > Trigger: Inbound Webhook here.
+  const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/rXchyFIMMt4DupAPlLyY/webhook-trigger/f7191870-f0bb-4d1f-be6f-296fd41ecb78';
+
+  function generateRef() {
+    const ts = Date.now().toString(36).toUpperCase();
+    const rand = Math.random().toString(36).substring(2,5).toUpperCase();
+    return 'PA-' + ts + rand;
+  }
+
+  function validate() {
+    let valid = true;
+
+    const required = [
+      { id: 'first_name',           err: 'err_first_name' },
+      { id: 'last_name',            err: 'err_last_name' },
+      { id: 'email',                err: 'err_email' },
+      { id: 'phone',                err: 'err_phone' },
+      { id: 'current_duration',     err: 'err_current_duration' },
+      { id: 'coach_name',           err: 'err_coach_name' },
+      { id: 'reason_category',      err: 'err_reason_category' },
+      { id: 'lower_cost_interest',  err: 'err_lower_cost_interest' },
+      { id: 'reason_detail',        err: 'err_reason_detail' },
+    ];
+
+    required.forEach(({ id, err }) => {
+      const el = document.getElementById(id);
+      const errEl = document.getElementById(err);
+      const val = el.value.trim();
+      if (!val) {
+        el.classList.add('invalid');
+        errEl.style.display = 'block';
+        valid = false;
+      } else {
+        el.classList.remove('invalid');
+        errEl.style.display = 'none';
+      }
+    });
+
+    const emailEl = document.getElementById('email');
+    if (emailEl.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+      emailEl.classList.add('invalid');
+      document.getElementById('err_email').style.display = 'block';
+      valid = false;
+    }
+
+    if (document.getElementById('reason_category').value === 'Other') {
+      const otherEl = document.getElementById('reason_other');
+      const otherErr = document.getElementById('err_reason_other');
+      if (!otherEl.value.trim()) {
+        otherEl.classList.add('invalid');
+        otherErr.style.display = 'block';
+        valid = false;
+      } else {
+        otherEl.classList.remove('invalid');
+        otherErr.style.display = 'none';
+      }
+    }
+
+    const c1 = document.getElementById('consent_1').checked;
+    const c2 = document.getElementById('consent_2').checked;
+    const c3 = document.getElementById('consent_3').checked;
+    const consentErr = document.getElementById('err_consent');
+    if (!c1 || !c2 || !c3) {
+      consentErr.style.display = 'block';
+      valid = false;
+    } else {
+      consentErr.style.display = 'none';
+    }
+
+    return valid;
+  }
+
+  function buildPayload() {
+    const first_name = document.getElementById('first_name').value.trim();
+    const last_name  = document.getElementById('last_name').value.trim();
+    return {
+      reference:           generateRef(),
+      submitted_at:        new Date().toISOString(),
+      first_name,
+      last_name,
+      full_name:           (first_name + ' ' + last_name).trim(),
+      email:               document.getElementById('email').value.trim(),
+      phone:               document.getElementById('phone').value.trim(),
+      current_duration:    document.getElementById('current_duration').value.trim(),
+      coach_name:          document.getElementById('coach_name').value,
+      reason_category:     document.getElementById('reason_category').value,
+      reason_other:        document.getElementById('reason_other').value.trim(),
+      lower_cost_interest: document.getElementById('lower_cost_interest').value,
+      reason_detail:       document.getElementById('reason_detail').value.trim(),
+      consent_minimum_term_confirmed: document.getElementById('consent_1').checked,
+      consent_final_payment_accepted: document.getElementById('consent_2').checked,
+      consent_form_only_acknowledged: document.getElementById('consent_3').checked,
+      source: 'physiqueacademy.com/cancel',
+      user_agent: navigator.userAgent,
+      page_url: window.location.href
+    };
+  }
+
+  async function postToWebhook(payload) {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) {
+      throw new Error('Webhook returned status ' + res.status);
+    }
+    return res;
+  }
+
+  function showError() {
+    const errBox = document.getElementById('submit-error');
+    errBox.style.display = 'block';
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = false;
+    btn.textContent = 'SUBMIT CANCELLATION REQUEST';
+  }
+
+  function showSuccess(payload) {
+    const now = new Date();
+    const formatted = now.toLocaleString('en-GB', {
+      day: '2-digit', month: 'long', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      timeZoneName: 'short'
+    });
+
+    document.getElementById('ref-number').textContent = 'REF: ' + payload.reference;
+    document.getElementById('confirm-email').textContent = payload.email;
+    document.getElementById('submit-timestamp').textContent = formatted;
+
+    document.getElementById('form-view').style.display = 'none';
+    const successEl = document.getElementById('success-screen');
+    successEl.style.display = 'flex';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('submit-error').style.display = 'none';
+    if (!validate()) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'SUBMITTING...';
+
+    const payload = buildPayload();
+    console.log('[PA Cancellation Form] Submission payload:', payload);
+
+    try {
+      await postToWebhook(payload);
+      showSuccess(payload);
+    } catch (err) {
+      console.error('[PA Cancellation Form] Webhook failed:', err);
+      showError();
+    }
+  }
+
+  ['first_name','last_name','email','phone','current_duration','coach_name','reason_category','lower_cost_interest','reason_other','reason_detail'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      el.classList.remove('invalid');
+      const errEl = document.getElementById('err_' + id);
+      if (errEl) errEl.style.display = 'none';
+    });
+  });
+
+  document.getElementById('reason_category').addEventListener('change', (e) => {
+    const otherRow = document.getElementById('reason_other_row');
+    if (e.target.value === 'Other') {
+      otherRow.style.display = '';
+    } else {
+      otherRow.style.display = 'none';
+      const otherEl = document.getElementById('reason_other');
+      otherEl.value = '';
+      otherEl.classList.remove('invalid');
+      document.getElementById('err_reason_other').style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

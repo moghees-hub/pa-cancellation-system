@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cancellation Policy Agreement | Physique Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:       #7FC838;
+    --green-dark:  #5aa820;
+    --green-soft:  #f0f9e8;
+    --green-border:#d4edc0;
+    --black:       #0a0a0a;
+    --text:        #1a1a1a;
+    --text-mid:    #555;
+    --text-light:  #888;
+    --white:       #ffffff;
+    --off-white:   #fafbfc;
+    --light:       #f7f8fa;
+    --border:      #e5e7eb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8e8e8;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    padding: 30px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Toolbar (hidden when printing) */
+  .toolbar {
+    max-width: 820px;
+    margin: 0 auto 24px;
+    background: var(--black);
+    color: #fff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+  }
+
+  .toolbar h2 {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-size: 17px;
+    color: #fff;
+  }
+
+  .toolbar h2 em {
+    font-style: normal;
+    color: var(--green);
+  }
+
+  .toolbar p {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  .print-btn {
+    background: var(--green);
+    color: var(--black);
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform .15s, background .15s;
+  }
+
+  .print-btn:hover { background: var(--green-dark); color: #fff; transform: translateY(-1px); }
+
+  /* Document */
+  .doc {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 56px 64px;
+    box-shadow: 0 4px 30px rgba(0,0,0,.12);
+    border-radius: 4px;
+  }
+
+  /* Header */
+  .doc-header {
+    background: var(--black);
+    color: #fff;
+    padding: 32px 32px;
+    text-align: center;
+    margin: -56px -64px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--green);
+  }
+
+  .brand {
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  .doc-title-pill {
+    display: inline-block;
+    background: rgba(127,200,56,0.12);
+    border: 1px solid rgba(127,200,56,0.3);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 22px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+  }
+
+  .doc-title {
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  .doc-title em {
+    font-style: normal;
+    color: var(--green);
+  }
+
+  .doc-subtitle {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+
+  /* Intro */
+  .intro {
+    font-size: 11pt;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .intro strong { font-weight: 700; }
+
+  /* How-to-cancel callout */
+  .cancel-callout {
+    background: var(--green-soft);
+    border: 2px solid var(--green-border);
+    border-left: 5px solid var(--green);
+    padding: 22px 26px;
+    margin: 28px 0 36px;
+    border-radius: 6px;
+  }
+
+  .cancel-callout h3 {
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 12px;
+  }
+
+  .cancel-callout .url {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 14pt;
+    color: var(--black);
+    margin: 12px 0;
+    padding: 14px 16px;
+    background: var(--white);
+    border: 2px dashed var(--green);
+    border-radius: 6px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .cancel-callout p {
+    font-size: 10.5pt;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .cancel-callout p strong { font-weight: 700; }
+
+  /* Section */
+  section {
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+
+  h2.section-title {
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 3px solid var(--green);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  h2.section-title em {
+    font-style: normal;
+    color: var(--green-dark);
+  }
+
+  .clause {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 10.5pt;
+    line-height: 1.65;
+  }
+
+  .clause-num {
+    font-weight: 800;
+    min-width: 34px;
+    color: var(--green-dark);
+  }
+
+  .clause-body strong { font-weight: 700; color: var(--text); }
+
+  /* Important box */
+  .important {
+    background: var(--light);
+    border: 2px solid var(--border);
+    border-left: 5px solid var(--black);
+    padding: 22px 26px;
+    margin: 32px 0;
+    border-radius: 6px;
+    page-break-inside: avoid;
+  }
+
+  .important h3 {
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 12px;
+  }
+
+  .important ol {
+    margin-left: 20px;
+    font-size: 10.5pt;
+    line-height: 1.7;
+  }
+
+  .important ol strong { font-weight: 700; }
+
+  /* Acknowledgements */
+  .ack-block { margin: 32px 0; page-break-inside: avoid; }
+
+  .ack-intro {
+    font-size: 10.5pt;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .ack-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .ack-item strong { font-weight: 700; }
+
+  .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--black);
+    margin-top: 2px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background: var(--white);
+  }
+
+  /* Signature block */
+  .sig-block {
+    margin-top: 40px;
+    padding: 28px 30px;
+    background: var(--black);
+    color: #fff;
+    border-radius: 8px;
+    page-break-inside: avoid;
+  }
+
+  .sig-block h3 {
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+
+  .sig-intro {
+    font-size: 10.5pt;
+    color: #ccc;
+    line-height: 1.65;
+    margin-bottom: 26px;
+  }
+
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 40px;
+  }
+
+  .sig-field label {
+    display: block;
+    font-size: 9pt;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 22px;
+  }
+
+  .sig-line {
+    border-bottom: 1.5px solid #fff;
+    height: 0;
+    margin-bottom: 6px;
+  }
+
+  /* Office use footer */
+  .office-use {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    margin-top: 24px;
+    font-size: 9.5pt;
+    color: var(--text-mid);
+    border-radius: 4px;
+  }
+
+  .office-use h4 {
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 10px;
+  }
+
+  .office-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer-line {
+    text-align: center;
+    font-size: 9pt;
+    color: var(--text-light);
+    margin-top: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    line-height: 1.7;
+  }
+
+  .footer-line strong { color: var(--text); font-weight: 700; }
+
+  /* Print rules */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .toolbar { display: none !important; }
+    .doc { box-shadow: none; max-width: none; padding: 22mm 18mm; border-radius: 0; }
+    .doc-header { margin: -22mm -18mm 18mm; }
+    .sig-block { background: var(--black) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cancel-callout { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .doc-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div>
+    <h2>Cancellation Policy <em>v2.0</em></h2>
+    <p>Click "Save as PDF" — your browser will open the print dialog. Choose "Save as PDF" as the destination.</p>
+  </div>
+  <button class="print-btn" onclick="window.print()">Save as PDF</button>
+</div>
+
+<div class="doc">
+
+  <div class="doc-header">
+    <div class="brand">PHYSIQUE ACADEMY</div>
+    <div class="doc-title-pill">Document v2.0</div>
+    <div class="doc-title">Cancellation <em>Policy</em> Agreement</div>
+    <div class="doc-subtitle">Client Copy &middot; Please Read Carefully Before Signing</div>
+  </div>
+
+  <p class="intro">
+    This document forms a <strong>standalone part of your agreement</strong> with Physique Academy. It sets out how to cancel your online coaching subscription, the notice you must give, and the terms surrounding final payments. You are required to read, understand, and sign this document <strong>separately from your main programme agreement</strong>. By signing below, you confirm that you have read and accept all terms contained herein.
+  </p>
+
+  <!-- How to cancel callout -->
+  <div class="cancel-callout">
+    <h3>How To Cancel &mdash; Read First</h3>
+    <p>To cancel your subscription you <strong>must</strong> submit your request via the official Physique Academy Cancellation Form:</p>
+    <span class="url">physiqueacademy.com/cancel</span>
+    <p>This form is the <strong>only valid</strong> method of cancellation. WhatsApp messages, text messages, verbal requests, or emails to your coach do <strong>not</strong> count as a cancellation request and will not stop your subscription. You will receive an automated email confirmation containing your reference number as soon as your request is logged.</p>
+  </div>
+
+  <!-- Section 1 -->
+  <section>
+    <h2 class="section-title">1. Minimum Commitment <em>Period</em></h2>
+    <div class="clause"><div class="clause-num">1.1</div><div class="clause-body">All online coaching subscriptions with Physique Academy are subject to a <strong>minimum commitment period of six (6) months</strong> from the date your subscription begins.</div></div>
+    <div class="clause"><div class="clause-num">1.2</div><div class="clause-body">You acknowledge that you are entering into a six-month minimum term and that early cancellation does not remove your obligation to pay for the full minimum period.</div></div>
+    <div class="clause"><div class="clause-num">1.3</div><div class="clause-body">If you attempt to cancel before completing your six-month minimum period, <strong>you will remain liable for all payments due for the remainder of that minimum term</strong>. These charges will be collected in accordance with your payment schedule.</div></div>
+    <div class="clause"><div class="clause-num">1.4</div><div class="clause-body">No refunds will be issued for payments already collected during the minimum commitment period.</div></div>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2 class="section-title">2. Rolling Monthly <em>Subscription</em></h2>
+    <div class="clause"><div class="clause-num">2.1</div><div class="clause-body">Upon completion of your six-month minimum term, your subscription will <strong>automatically continue on a rolling monthly basis</strong> at the same rate, billed on the same date each month.</div></div>
+    <div class="clause"><div class="clause-num">2.2</div><div class="clause-body">No further action is required from you to continue your subscription. Payments will continue to be collected until a valid cancellation request is received and processed in accordance with Section 3.</div></div>
+    <div class="clause"><div class="clause-num">2.3</div><div class="clause-body">You authorise Physique Academy and its payment processors to continue collecting payments on this rolling basis until your subscription is formally cancelled.</div></div>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2 class="section-title">3. Cancellation Process &amp; <em>Notice</em></h2>
+    <div class="clause"><div class="clause-num">3.1</div><div class="clause-body"><strong>Cancellation requests are only accepted after completion of the minimum six-month period.</strong> Any request received before this time will not be processed and does not relieve you of your payment obligations under Section 1.</div></div>
+    <div class="clause"><div class="clause-num">3.2</div><div class="clause-body">To cancel your subscription, you must submit a formal cancellation request via the Physique Academy Cancellation Form at <strong>physiqueacademy.com/cancel</strong>. Verbal requests, WhatsApp messages, or emails to your coach do not constitute a valid cancellation request.</div></div>
+    <div class="clause"><div class="clause-num">3.3</div><div class="clause-body"><strong>You must give a minimum of one (1) full calendar month's notice</strong> before your next scheduled payment date. Notice must be submitted on or before your payment date to take effect for that billing period.</div></div>
+    <div class="clause"><div class="clause-num">3.4</div><div class="clause-body"><strong>Example:</strong> If your payment date is the 10th of the month, you must submit your cancellation request on or before the 10th of the previous month. A request submitted on the 11th will not be processed until the following month's billing cycle.</div></div>
+    <div class="clause"><div class="clause-num">3.5</div><div class="clause-body"><strong>At least one (1) final payment will be collected</strong> following submission of your cancellation request, in accordance with the one-month notice requirement. You will not be entitled to a refund of this final payment.</div></div>
+    <div class="clause"><div class="clause-num">3.6</div><div class="clause-body">You will receive a written confirmation of your cancellation request via email, along with the date your final payment will be collected and the date your subscription will end. You should retain this confirmation for your records.</div></div>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2 class="section-title">4. Payment <em>Notices</em></h2>
+    <div class="clause"><div class="clause-num">4.1</div><div class="clause-body">Physique Academy will send you an automated email notification <strong>seven (7) days before each scheduled payment</strong>, confirming the amount due and the payment date. This notice will also include a direct link to the cancellation form should you wish to cancel.</div></div>
+    <div class="clause"><div class="clause-num">4.2</div><div class="clause-body">It is your responsibility to ensure that your email address on file is current and that payment notification emails are not filtered as spam. Physique Academy accepts no liability for missed payment notices where the notification has been sent to the email address you have provided.</div></div>
+    <div class="clause"><div class="clause-num">4.3</div><div class="clause-body">Failure to read or respond to a payment notification does not constitute grounds for a payment dispute or chargeback.</div></div>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2 class="section-title">5. Disputes &amp; <em>Chargebacks</em></h2>
+    <div class="clause"><div class="clause-num">5.1</div><div class="clause-body">By signing this agreement, you acknowledge that all charges made to your payment method by Physique Academy are in accordance with the terms you have agreed to herein.</div></div>
+    <div class="clause"><div class="clause-num">5.2</div><div class="clause-body"><strong>You agree not to initiate a chargeback or payment dispute</strong> with your bank or card provider for any payment that has been collected in accordance with these terms. If you have a concern about a charge, you agree to contact Physique Academy directly in the first instance.</div></div>
+    <div class="clause"><div class="clause-num">5.3</div><div class="clause-body">In the event of a chargeback, Physique Academy reserves the right to submit this signed agreement, your payment history, email communication logs, and any other relevant evidence to the payment processor and/or card network in defence of the charge.</div></div>
+    <div class="clause"><div class="clause-num">5.4</div><div class="clause-body">Any fraudulent or unjustified chargebacks may be referred for debt recovery and may result in legal action.</div></div>
+  </section>
+
+  <!-- Important -->
+  <div class="important">
+    <h3>Important &mdash; Please Read Before Signing</h3>
+    <p style="font-size:10.5pt;line-height:1.65;margin-bottom:12px;">By signing this document you confirm:</p>
+    <ol>
+      <li>You understand and accept the six-month minimum commitment;</li>
+      <li>You understand the one-month cancellation notice requirement and that at least one final payment will be collected;</li>
+      <li>You understand that cancellations must be submitted via the official cancellation form at <strong>physiqueacademy.com/cancel</strong> only;</li>
+      <li>You acknowledge that Physique Academy will send 7-day advance payment notices to your registered email address.</li>
+    </ol>
+  </div>
+
+  <!-- Acknowledgements -->
+  <div class="ack-block">
+    <h2 class="section-title">Client <em>Acknowledgements</em></h2>
+    <p class="ack-intro">Please tick each box to confirm your understanding before signing:</p>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand my subscription has a minimum term of six (6) months and I cannot cancel during this period.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand that cancelling before six months does not release me from paying for the full minimum term.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand I must give one (1) full month's notice, aligned to my payment date, to cancel after my minimum term.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand that at least one final payment will be collected after I submit my cancellation request.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand that cancellations must be submitted via the official cancellation form at <strong>physiqueacademy.com/cancel</strong> &mdash; and that WhatsApp messages, emails to my coach, or verbal requests are not valid.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I understand I will receive 7-day advance payment notice emails and it is my responsibility to ensure my email is current.</div></div>
+    <div class="ack-item"><div class="checkbox"></div><div>I agree not to raise a payment dispute or chargeback for charges collected in accordance with these terms.</div></div>
+  </div>
+
+  <!-- Signature -->
+  <div class="sig-block">
+    <h3>Declaration &amp; Signature</h3>
+    <p class="sig-intro">I confirm that I have read, understood, and agree to all terms set out in this Cancellation Policy Agreement. I understand that this document forms a standalone part of my agreement with Physique Academy.</p>
+
+    <div class="sig-grid">
+      <div class="sig-field"><div class="sig-line"></div><label>Full Name (printed)</label></div>
+      <div class="sig-field"><div class="sig-line"></div><label>Date</label></div>
+      <div class="sig-field"><div class="sig-line"></div><label>Signature</label></div>
+      <div class="sig-field"><div class="sig-line"></div><label>Email Address</label></div>
+      <div class="sig-field"><div class="sig-line"></div><label>Programme Start Date</label></div>
+      <div class="sig-field"><div class="sig-line"></div><label>Payment Date (Day of Month)</label></div>
+    </div>
+  </div>
+
+  <!-- Office use -->
+  <div class="office-use">
+    <h4>For Office Use Only</h4>
+    <div class="office-grid">
+      <div>Document Version: <strong>v2.0</strong></div>
+      <div>Received By: ____________</div>
+      <div>Date Received: ____________</div>
+    </div>
+  </div>
+
+  <p class="footer-line">
+    <strong>Physique Academy</strong> &middot; physiqueacademy.com &middot; Document Version 2.0<br>
+    This document should be retained by both parties. A digital copy will be emailed to the client upon signing.
+  </p>
+
+</div>
+
+</body>
+</html>

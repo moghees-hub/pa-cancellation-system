@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cancellation Process - Physique Academy Team Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --green: #7FC838;
+    --green-dark: #6BB02E;
+    --green-soft: #F0F9E8;
+    --text: #0A0A0A;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+    border-radius: 6px;
+  }
+
+  .brand-name { font-weight: 700; font-size: 18px; line-height: 1; }
+  .brand-tagline { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .doc-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .doc-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--green);
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  p { margin-bottom: 14px; color: var(--text); }
+
+  ul, ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  strong { font-weight: 600; }
+
+  a { color: var(--green-dark); font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(127,200,56,.3); }
+  a:hover { border-bottom-color: var(--green-dark); }
+
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    padding: 22px 26px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .step-number {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 700;
+    background: var(--green);
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+
+  .step h3 { margin-top: 0; }
+
+  .callout {
+    background: var(--green-soft);
+    border: 1px solid #D7EBC2;
+    border-left: 3px solid var(--green);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 14.5px;
+  }
+
+  .callout strong { color: var(--text); }
+
+  .role-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .role-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .role-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+
+  .role-card p { margin-bottom: 6px; }
+
+  .role-card ul { margin-bottom: 4px; padding-left: 18px; }
+  .role-card ul li { margin-bottom: 4px; }
+
+  .scenario {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .scenario-q {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .scenario-a { color: var(--text-muted); font-size: 14.5px; line-height: 1.7; }
+
+  .scenario-a strong { color: var(--text); }
+
+  figure {
+    margin: 18px 0 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--surface);
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding: 10px 14px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--green-dark);
+    border-top: 1px solid var(--border);
+    background: var(--green-soft);
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .image-grid figure { margin: 0; }
+
+  @media (max-width: 640px) {
+    .image-grid { grid-template-columns: 1fr; }
+  }
+
+  blockquote {
+    background: var(--green-soft);
+    border-left: 3px solid var(--green);
+    padding: 12px 16px;
+    margin: 10px 0 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    main { padding: 32px 20px 60px; }
+    header { padding: 16px 20px; }
+    .step, .role-card, .scenario { padding: 18px 20px; }
+  }
+
+  @media print {
+    body { background: white; }
+    header { border-bottom: 2px solid #0A0A0A; }
+    main { padding: 24px; max-width: 100%; }
+    .step, .role-card, .scenario { box-shadow: none; page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">PA</div>
+  <div>
+    <div class="brand-name">Physique Academy</div>
+    <div class="brand-tagline">Team Guide</div>
+  </div>
+</header>
+
+<main>
+
+  <p class="doc-eyebrow">Internal Guide</p>
+  <h1>Cancellation Process</h1>
+  <p class="doc-subtitle">How cancellations work at Physique Academy and what each team member is responsible for.</p>
+
+  <h2>Why We Have This Process</h2>
+  <p>We need every cancellation request to come through a single official channel with a clear paper trail.</p>
+  <ol>
+    <li><strong>Chargeback / dispute protection.</strong> If a client later disputes a payment with Stripe or their bank, we need to prove they read the terms, acknowledged them, and submitted a cancellation request the right way. Without that proof we lose disputes.</li>
+    <li><strong>Consistency.</strong> Clients can't shop around the team trying to find someone who'll give them a different answer. One process, same outcome every time.</li>
+    <li><strong>Fairness to the client.</strong> The form makes clear what they're agreeing to before they submit, so no surprises about the final payment.</li>
+  </ol>
+  <div class="callout">
+    All other channels (WhatsApp, email, verbal request to a coach) are <strong>not valid</strong> and should be politely redirected to the form.
+  </div>
+
+  <h2>Step 1: Signed Cancellation Policy at Onboarding</h2>
+  <p>Every new client signs a <strong>Cancellation &amp; Billing Policy Agreement</strong> as part of their onboarding. This is the foundation of our dispute defence. By the time anyone wants to cancel, they've already signed and agreed to the terms.</p>
+
+  <div class="step">
+    <div class="step-number">When it's triggered</div>
+    <h3>Automatically, after the client completes the onboarding questionnaire</h3>
+    <p>Once a new client fills in and submits the long onboarding questionnaire, the cancellation policy document is sent to them via email through GHL Documents &amp; Contracts. No manual step is required from the team.</p>
+  </div>
+
+  <figure>
+    <img src="screenshots/02-cancellation-policy-email.png" alt="Cancellation policy email sent to client at onboarding">
+    <figcaption>The email the client receives shortly after completing the onboarding questionnaire, with a link to sign the cancellation policy.</figcaption>
+  </figure>
+
+  <div class="step">
+    <div class="step-number">What the client does</div>
+    <h3>Opens the document, reads, and signs electronically</h3>
+    <p>The policy explains the 6-month minimum, that one final payment will be collected after any cancellation request, and that the official cancellation form is the only valid method.</p>
+  </div>
+
+  <figure>
+    <img src="screenshots/01-signed-policy-document.png" alt="The cancellation policy document the client signs">
+    <figcaption>The Cancellation &amp; Billing Policy Agreement the client e-signs at onboarding.</figcaption>
+  </figure>
+
+  <div class="step">
+    <div class="step-number">What happens once signed</div>
+    <h3>The signed document is stored on the client's GHL contact</h3>
+    <p>A URL to the signed contract is saved to the contact's <strong>Signed Policy URL</strong> field, with a timestamp. This is the first piece of dispute defence evidence we keep on file.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-number">If they haven't signed</div>
+    <h3>Bailey chases via the tracker dashboard</h3>
+    <p>The cancellation tracker dashboard shows everyone who has and hasn't signed. Bailey follows up with anyone outstanding so we don't have clients on the books without a signed agreement.</p>
+  </div>
+
+  <h2>Ongoing: Automated 7-Day Pre-Payment Notice</h2>
+  <p>This runs in parallel to the subscription, not as a one-off event. Every active client automatically receives a notice email 7 days before each monthly billing for the entire life of their subscription. It's one of Stripe's chargeback-defence requirements and is fully automated. No team action is required.</p>
+
+  <div class="step">
+    <div class="step-number">When it's triggered</div>
+    <h3>Automatically, 7 days before each subscription renewal</h3>
+    <p>Stripe detects the upcoming renewal and sends an event to our system, which then triggers the notice email to the client through GHL.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-number">What the client receives</div>
+    <h3>An email reminding them of the upcoming payment</h3>
+    <p>The email confirms the amount due, the date their card will be charged, and how to contact us if they need to discuss anything. This means no client is ever charged without prior warning.</p>
+  </div>
+
+  <figure>
+    <img src="screenshots/12-7-day-notice.png" alt="The 7-day pre-payment notice email">
+    <figcaption>The 7-day pre-payment notice email that is sent automatically to every client 7 days before each renewal.</figcaption>
+  </figure>
+
+  <h2>Step 2: Client Requests Cancellation</h2>
+  <p>When a client wants to cancel, they follow this path:</p>
+
+  <ol>
+    <li><strong>Visit the cancellation page</strong> at <a href="https://physiqueacademy.com/refunds-cancellations">physiqueacademy.com/refunds-cancellations</a> (also reachable via <code>/cancel</code>).</li>
+    <li><strong>Fill in the form</strong>: name, email, phone, current duration on program, coach, reason for cancelling, lower-cost option preference, additional comments.</li>
+    <li><strong>Tick three required acknowledgements</strong>:
+      <ul>
+        <li>They've completed their 6-month minimum</li>
+        <li>They understand at least one final payment will be collected</li>
+        <li>They understand this form is the only valid cancellation method</li>
+      </ul>
+    </li>
+    <li><strong>Submit.</strong></li>
+    <li><strong>Receive a confirmation email immediately</strong> with their unique cancellation reference (e.g. <code>CXL-AB12CD34</code>). They keep this for their records.</li>
+    <li><strong>Team member contacts them within 2 business days</strong> to confirm their final payment date, end date, and that access continues until then.</li>
+  </ol>
+
+  <div class="image-grid">
+    <figure>
+      <img src="screenshots/03-cancellation-form.png" alt="The cancellation form on physiqueacademy.com">
+      <figcaption>The form at physiqueacademy.com/refunds-cancellations.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/04-acknowledgement-checkboxes.png" alt="The three required acknowledgement checkboxes">
+      <figcaption>The three mandatory acknowledgements clients must tick before they can submit.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/05-confirmation-page.png" alt="The form confirmation page shown after submission">
+      <figcaption>The on-page confirmation the client sees immediately after submitting.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/06-client-confirmation-email.png" alt="The confirmation email the client receives">
+      <figcaption>The confirmation email the client receives with their cancellation reference.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Step 3: Who Receives What and What They Do</h2>
+
+  <div class="role-card">
+    <div class="role-name">The Client</div>
+    <span class="role-label">Receives</span> Confirmation email immediately with their cancellation reference and the 3 things they acknowledged.
+    <br>
+    <span class="role-label">Does</span> Nothing further until a team member follows up within 2 business days.
+  </div>
+
+  <div class="role-card">
+    <div class="role-name">Bailey (cancellation admin)</div>
+    <p><span class="role-label">Receives</span></p>
+    <ul>
+      <li>Email notification in the Physique Academy GHL inbox</li>
+      <li>Slack alert in <code>#cancellations</code></li>
+    </ul>
+    <p><span class="role-label">Does</span></p>
+    <ul>
+      <li>Within 2 business days, contact the client to confirm their final payment date and end date</li>
+      <li>Process the cancellation in Stripe (set the subscription to cancel at period end)</li>
+      <li>Update the client's <strong>Cancellation Status</strong> in GHL: Requested → Confirmed → Completed</li>
+      <li>Check the tracker dashboard to chase anyone who hasn't yet signed the cancellation policy</li>
+    </ul>
+  </div>
+
+  <div class="image-grid">
+    <figure>
+      <img src="screenshots/07-internal-email.png" alt="The internal email Bailey receives">
+      <figcaption>The internal email landing in the Physique Academy GHL inbox.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/08-slack-alert.jpg" alt="The Slack alert in #cancellations">
+      <figcaption>The Slack alert posted in <code>#cancellations</code>.</figcaption>
+    </figure>
+  </div>
+
+  <figure>
+    <img src="screenshots/10-tracker-dashboard.png" alt="The cancellation tracker dashboard">
+    <figcaption>The cancellation tracker dashboard Bailey uses to monitor signing status. URL: pa-cancellation-tracker-production.up.railway.app</figcaption>
+  </figure>
+
+  <div class="role-card">
+    <div class="role-name">The Selected Coach</div>
+    <span class="role-label">Receives</span> In-app GHL notification that their client has requested cancellation.
+    <p><span class="role-label">Does</span></p>
+    <ul>
+      <li>Bailey handles the admin, you don't need to action anything</li>
+      <li>Optionally reach out for retention or a friendly send-off</li>
+      <li><strong>Do not</strong> promise refunds or override the policy (one final payment will still be collected)</li>
+    </ul>
+  </div>
+
+  <div class="role-card">
+    <div class="role-name">Management (Jamie Gorse, Neil Chauhan, Sam Parker)</div>
+    <span class="role-label">Receives</span> GHL notification for every cancellation request, regardless of which coach was selected.
+    <p><span class="role-label">Does</span></p>
+    <ul>
+      <li>Spot patterns in <code>#cancellations</code> (e.g. multiple "Not connecting with my coach" responses → coach review)</li>
+      <li>Handle escalations (medical, hardship, dispute risk)</li>
+      <li>Review weekly volume and reasons</li>
+    </ul>
+  </div>
+
+  <h2>What We Keep on File as Evidence</h2>
+  <p>For every cancellation request, the following is automatically recorded on the client's GHL contact. This is what we send Stripe if a chargeback dispute is ever raised.</p>
+
+  <figure>
+    <img src="screenshots/09-audit-note.png" alt="The DISPUTE EVIDENCE note saved on the contact">
+    <figcaption>The DISPUTE EVIDENCE note added to the contact at the moment of submission. Includes timestamp, form URL, the 3 acknowledgements, the reason, and the unique reference.</figcaption>
+  </figure>
+
+  <div class="image-grid">
+    <figure>
+      <img src="screenshots/11a-ghl-contact-view.png" alt="GHL contact view showing cancellation fields">
+      <figcaption>The contact's GHL profile showing the cancellation reference, status, and requested-at timestamp.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/11b-ghl-contact-view.png" alt="GHL contact view showing tags and signed policy URL">
+      <figcaption>Tags and signed cancellation policy URL stored on the same contact.</figcaption>
+    </figure>
+  </div>
+
+  <h2>What Clients Should Be Told (Key Talking Points)</h2>
+  <ul>
+    <li>They must complete their <strong>6-month minimum</strong> before they can cancel.</li>
+    <li>They must give <strong>at least 1 calendar month's notice</strong>, aligned with their payment date.</li>
+    <li><strong>At least one final payment will still be collected</strong> after they submit the request. This is not refundable.</li>
+    <li>The <strong>only valid way to cancel</strong> is via the form at <a href="https://physiqueacademy.com/refunds-cancellations">physiqueacademy.com/refunds-cancellations</a>. WhatsApp messages, emails, or verbal requests to a coach do not count.</li>
+  </ul>
+
+  <h2>Common Scenarios</h2>
+
+  <div class="scenario">
+    <p class="scenario-q">"A client emailed me asking to cancel."</p>
+    <p class="scenario-a">Reply with the form link. Do not action the request via email. Example reply:</p>
+    <blockquote>To cancel your subscription please complete the official cancellation form: physiqueacademy.com/refunds-cancellations. This is the only way we can process cancellations. You'll get a confirmation email within minutes and a team member will follow up within 2 business days.</blockquote>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"A client is upset about the final payment."</p>
+    <p class="scenario-a">The 3 acknowledgements they ticked on the form make this clear before they submit. Refer them to the cancellation policy they signed at onboarding.</p>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"A client says they cancelled but we still charged them."</p>
+    <p class="scenario-a">Look them up by email in GHL. If they never submitted the form, the cancellation isn't on record and the charge was correct. If they did submit, escalate to Moghees.</p>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"A client wants a refund of the final payment."</p>
+    <p class="scenario-a">The final payment is non-refundable per the terms they agreed to at onboarding and re-confirmed on the cancellation form. Refer them to the policy.</p>
+  </div>
+
+  <footer>
+    Physique Academy &middot; Internal Team Guide &middot; Last updated 7 June 2026
+  </footer>
+
+</main>
+
+</body>
+</html>
