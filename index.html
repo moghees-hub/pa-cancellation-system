@@ -40,11 +40,27 @@
     gap: 18px;
   }
 
-  .logo-img {
-    height: 44px;
-    width: auto;
-    display: block;
+  .pa-lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
     flex-shrink: 0;
+  }
+
+  .pa-lockup svg {
+    width: 44px;
+    height: auto;
+    display: block;
+  }
+
+  .pa-lockup .wordmark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text);
+    line-height: 1;
   }
 
   .brand-divider {
@@ -276,7 +292,8 @@
       padding: 14px 16px;
       gap: 12px;
     }
-    .logo-img { height: 36px; }
+    .pa-lockup svg { width: 36px; }
+    .pa-lockup .wordmark { font-size: 9.5px; letter-spacing: 1.2px; }
     .brand-tagline { font-size: 10.5px; letter-spacing: 1px; }
 
     main { padding: 28px 16px 48px; }
@@ -326,7 +343,12 @@
 <body>
 
 <header>
-  <img src="pa-logo.png" alt="Physique Academy" class="logo-img">
+  <div class="pa-lockup" aria-label="Physique Academy">
+    <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M60 0 L120 100 L88 100 L78 80 L42 80 L32 100 L0 100 Z M52 60 L68 60 L60 42 Z" fill="#7FC838" fill-rule="evenodd"/>
+    </svg>
+    <span class="wordmark">PHYSIQUE</span>
+  </div>
   <div class="brand-divider"></div>
   <div class="brand-tagline">Team Guide</div>
 </header>
