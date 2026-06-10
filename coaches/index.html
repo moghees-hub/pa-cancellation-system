@@ -309,6 +309,19 @@
     background: var(--green-soft);
   }
 
+  .image-pair {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 18px 0 22px;
+  }
+
+  .image-pair figure { margin: 0; }
+
+  @media (max-width: 640px) {
+    .image-pair { grid-template-columns: 1fr; gap: 12px; }
+  }
+
   .quick-ref {
     background: var(--text);
     color: #fff;
@@ -394,9 +407,6 @@
   <div class="brand-tagline">Coaches Guide</div>
 </header>
 
-<div class="breadcrumb">
-  <a href="../">Team Guide</a> &nbsp;/&nbsp; Coaches Guide
-</div>
 
 <main>
 
@@ -417,6 +427,20 @@
     <li><strong>One month's notice.</strong> Cancellation must be requested at least 1 calendar month before the next payment date.</li>
     <li><strong>Form-only cancellation.</strong> The only valid way to cancel is via the official form at <a href="https://physiqueacademy.com/refunds-cancellations">physiqueacademy.com/refunds-cancellations</a>. WhatsApp messages, emails, or verbal requests directly to you do <strong>not</strong> count.</li>
   </ul>
+
+  <h2>What Your Client Receives at Onboarding</h2>
+  <p>Once a new client completes the onboarding questionnaire, they automatically receive an email with the cancellation policy to sign. Here's what they see, so you can recognise both if a client asks.</p>
+
+  <div class="image-pair">
+    <figure>
+      <img src="../screenshots/02-cancellation-policy-email.png" alt="The cancellation policy email a client receives">
+      <figcaption>The email the client gets with a link to sign the policy.</figcaption>
+    </figure>
+    <figure>
+      <img src="../screenshots/01-signed-policy-document.png" alt="The signed cancellation policy document">
+      <figcaption>The Cancellation &amp; Billing Policy Agreement the client e-signs.</figcaption>
+    </figure>
+  </div>
 
   <h2>Your Responsibilities</h2>
   <ol class="duty-list">
