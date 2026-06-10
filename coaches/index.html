@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaches Guide | Cancellation Policy | Physique Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --green: #7FC838;
+    --green-dark: #6BB02E;
+    --green-soft: #F0F9E8;
+    --text: #0A0A0A;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .logo-img {
+    height: 52px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .brand-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .breadcrumb {
+    background: var(--green-soft);
+    border-bottom: 1px solid #D7EBC2;
+    padding: 10px 32px;
+    font-size: 13px;
+    color: var(--green-dark);
+    font-weight: 500;
+  }
+
+  .breadcrumb a {
+    color: var(--green-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(127,200,56,.3);
+  }
+
+  .breadcrumb a:hover { border-bottom-color: var(--green-dark); }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .doc-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .doc-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-top: 44px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--green);
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  p { margin-bottom: 14px; color: var(--text); }
+
+  ul, ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  strong { font-weight: 600; }
+
+  a { color: var(--green-dark); font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(127,200,56,.3); }
+  a:hover { border-bottom-color: var(--green-dark); }
+
+  code {
+    background: var(--green-soft);
+    color: var(--green-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .why-card {
+    background: var(--green-soft);
+    border: 1px solid #D7EBC2;
+    border-left: 4px solid var(--green);
+    padding: 22px 26px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .why-card h2 {
+    margin-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: 18px;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+  }
+
+  .why-card p { font-size: 14.5px; margin-bottom: 0; }
+
+  .duty-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+    counter-reset: dutycount;
+  }
+
+  .duty-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    padding: 16px 20px 16px 56px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    counter-increment: dutycount;
+  }
+
+  .duty-list li::before {
+    content: counter(dutycount);
+    position: absolute;
+    left: 18px;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    background: var(--green);
+    color: var(--text);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .duty-list li strong { display: block; margin-bottom: 4px; font-size: 15px; }
+  .duty-list li span { font-size: 14px; color: var(--text-muted); }
+
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .step-num {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 700;
+    background: var(--green);
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .step-card h3 { margin-top: 0; }
+
+  .template-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .template-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .template-card h3 { margin: 0 0 10px; font-size: 15px; }
+
+  .template-body {
+    background: #F9FAFB;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text);
+    white-space: pre-wrap;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .scenario {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px 22px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .scenario-q {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-size: 14.5px;
+  }
+
+  .scenario-a { color: var(--text-muted); font-size: 14px; line-height: 1.65; }
+  .scenario-a strong { color: var(--text); }
+
+  figure {
+    margin: 18px 0 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--surface);
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding: 10px 14px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--green-dark);
+    border-top: 1px solid var(--border);
+    background: var(--green-soft);
+  }
+
+  .quick-ref {
+    background: var(--text);
+    color: #fff;
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin: 36px 0 24px;
+  }
+
+  .quick-ref h2 {
+    color: var(--green);
+    border-bottom: 2px solid var(--green);
+    margin-top: 0;
+  }
+
+  .quick-ref dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px 16px;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .quick-ref dt {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  .quick-ref dd {
+    color: #fff;
+    word-break: break-all;
+  }
+
+  .quick-ref dd a {
+    color: var(--green);
+    border-bottom: 1px solid rgba(127,200,56,.4);
+  }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 14px 16px; gap: 12px; }
+    .logo-img { height: 40px; }
+    .brand-tagline { font-size: 10.5px; letter-spacing: 1px; }
+    .breadcrumb { padding: 8px 16px; font-size: 12px; }
+    main { padding: 28px 16px 48px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 17px; margin-top: 32px; }
+    h3 { font-size: 15px; }
+    .doc-subtitle { font-size: 14.5px; margin-bottom: 24px; }
+    p, li { font-size: 15px; }
+    .duty-list li { padding: 14px 16px 14px 52px; }
+    .duty-list li::before { left: 14px; top: 12px; }
+    .step-card, .template-card, .scenario { padding: 14px 16px; }
+    .template-body { padding: 12px 14px; font-size: 13px; }
+    .quick-ref { padding: 18px 20px; }
+    .quick-ref dl { grid-template-columns: 1fr; gap: 4px 0; }
+    .quick-ref dt { margin-top: 8px; font-size: 12px; }
+    figure { margin: 14px 0 18px; }
+    figcaption { padding: 8px 12px; font-size: 12.5px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .breadcrumb { display: none; }
+    main { padding: 24px; max-width: 100%; }
+    .step-card, .scenario, .template-card { box-shadow: none; page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="../pa-logo.png" alt="Physique Academy" class="logo-img">
+  <div class="brand-divider"></div>
+  <div class="brand-tagline">Coaches Guide</div>
+</header>
+
+<div class="breadcrumb">
+  <a href="../">Team Guide</a> &nbsp;/&nbsp; Coaches Guide
+</div>
+
+<main>
+
+  <p class="doc-eyebrow">For Coaches</p>
+  <h1>The Cancellation Policy and Your Role</h1>
+  <p class="doc-subtitle">A short, focused guide on what the signed policy is, what's expected from you, and how to chase clients who haven't signed yet.</p>
+
+  <div class="why-card">
+    <h2>Why this matters to you</h2>
+    <p>You're the closest person to your client. If they ever cancel later and try to dispute a charge, the only thing standing between Physique Academy and a lost chargeback is the policy document they signed at onboarding. Your job is to make sure every one of your clients signs it, and to know the policy well enough to handle questions confidently.</p>
+  </div>
+
+  <h2>The Policy in Plain English</h2>
+  <p>Every new client signs a Cancellation &amp; Billing Policy Agreement at onboarding. You don't need to read the full contract every time, but you must know the headline terms:</p>
+  <ul>
+    <li><strong>6-month minimum commitment.</strong> Clients cannot cancel before completing 6 full months on the programme.</li>
+    <li><strong>One final payment after cancellation.</strong> When a client cancels, one more monthly payment will still be collected. This is not refundable.</li>
+    <li><strong>One month's notice.</strong> Cancellation must be requested at least 1 calendar month before the next payment date.</li>
+    <li><strong>Form-only cancellation.</strong> The only valid way to cancel is via the official form at <a href="https://physiqueacademy.com/refunds-cancellations">physiqueacademy.com/refunds-cancellations</a>. WhatsApp messages, emails, or verbal requests directly to you do <strong>not</strong> count.</li>
+  </ul>
+
+  <h2>Your Responsibilities</h2>
+  <ol class="duty-list">
+    <li>
+      <strong>Know the policy</strong>
+      <span>So you can answer client questions confidently. The 4 headline terms above are enough for most conversations.</span>
+    </li>
+    <li>
+      <strong>Check the tracker dashboard weekly</strong>
+      <span>Open the Cancellation Policy Tracker, filter by your name, and look for any of your clients who haven't signed yet.</span>
+    </li>
+    <li>
+      <strong>Chase unsigned clients</strong>
+      <span>Use the templates further down this page. Polite, clear, with the signing link.</span>
+    </li>
+    <li>
+      <strong>Refer any cancellation requests to the official form</strong>
+      <span>If a client asks you directly to cancel them, do not action it. Send them the form link. No exceptions.</span>
+    </li>
+  </ol>
+
+  <h2>How to Use the Tracker</h2>
+  <p>The Cancellation Policy Tracker shows every active client and whether they've signed the policy. There's a coach filter at the top so you can narrow it to only your clients.</p>
+
+  <div class="step-card">
+    <div class="step-num">Step 1</div>
+    <h3>Log in</h3>
+    <p>Open <a href="https://pa-cancellation-tracker-production.up.railway.app">pa-cancellation-tracker-production.up.railway.app</a> and enter the team password. Ask Moghees or check the team Slack if you don't have it.</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 2</div>
+    <h3>Filter by your name</h3>
+    <p>Use the coach dropdown above the table and pick yourself. The list now shows only your clients. Your selection is remembered, so next time you log in you'll already be filtered.</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 3</div>
+    <h3>Click the "Awaiting Signature" tab</h3>
+    <p>This shows only your clients who haven't signed yet. Anyone here needs chasing.</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 4</div>
+    <h3>Hit "Send Reminder"</h3>
+    <p>The dashboard fires an automated reminder email with a fresh signing link. You can send up to 3 reminders. After 3, the cap stops automated reminders and you should reach out personally via WhatsApp or chat.</p>
+  </div>
+
+  <figure>
+    <img src="../screenshots/10-tracker-dashboard.png" alt="The Cancellation Policy Tracker dashboard">
+    <figcaption>The dashboard. Use the coach filter at the top, then the Awaiting Signature tab, then hit Send Reminder for each outstanding client.</figcaption>
+  </figure>
+
+  <h2>Chase Message Templates</h2>
+  <p>If a client needs more than a reminder email, send a personal message. Here are templates you can copy and paste. Keep them warm, short, and never apologetic about the policy itself.</p>
+
+  <div class="template-card">
+    <div class="template-label">First nudge - friendly</div>
+    <h3>Best for clients in their first 2 weeks</h3>
+    <div class="template-body">Hey [Name], welcome to Physique Academy. Quick admin one for you: I noticed you haven't signed our Cancellation &amp; Billing Policy yet. It's standard for everyone joining and only takes a minute. Could you have a look when you get a chance? Should be in your email inbox from us, but let me know if you can't find it.</div>
+  </div>
+
+  <div class="template-card">
+    <div class="template-label">Second nudge - clearer</div>
+    <h3>If they still haven't signed after a few days</h3>
+    <div class="template-body">Hey [Name], just bumping this up. We need every client to sign the Cancellation &amp; Billing Policy as part of onboarding, otherwise we can't continue your programme properly. It's quick. Let me know if you're having trouble finding the email and I'll get it resent to you.</div>
+  </div>
+
+  <div class="template-card">
+    <div class="template-label">Third nudge - firmer</div>
+    <h3>Final personal reach out</h3>
+    <div class="template-body">Hey [Name], one more nudge on the Cancellation Policy signing. This is the last reminder I'll send personally. If it's not done in the next few days, the office team will follow up. It's a standard agreement that every client signs at onboarding and we can't skip it. Let me know if you have any questions about what it covers.</div>
+  </div>
+
+  <h2>If a Client Asks You About Cancelling</h2>
+  <p>Don't take the cancellation request yourself. Always direct them to the form. Here are short scripts for common situations.</p>
+
+  <div class="scenario">
+    <p class="scenario-q">"Can I cancel my subscription?"</p>
+    <p class="scenario-a">If they're past their 6-month minimum: <em>"Sure, the official way to cancel is via the form on our website at physiqueacademy.com/refunds-cancellations. It takes a couple of minutes and you'll get a confirmation email. I can't action cancellations directly."</em></p>
+    <p class="scenario-a">If they're inside their 6-month minimum: <em>"You're still inside your 6-month minimum so cancellation isn't available yet. You can submit the request via the form when you reach the 6-month mark."</em></p>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"I want my money back / a refund"</p>
+    <p class="scenario-a"><em>"Refunds aren't part of the cancellation policy. When you cancel, one final payment is still collected as standard - that's what you agreed to in the policy at onboarding. Happy to forward your feedback to the team if there's something specific."</em></p>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"Just cancel me, here in chat"</p>
+    <p class="scenario-a"><em>"I can't action cancellations through chat - the only valid way is via the form at physiqueacademy.com/refunds-cancellations. It's a quick submission and you'll get a confirmation email. Without it on record we can't process anything."</em></p>
+  </div>
+
+  <div class="scenario">
+    <p class="scenario-q">"I forgot what I signed at onboarding"</p>
+    <p class="scenario-a"><em>"No problem - the policy covers a 6-month minimum, one final payment when you cancel, one month's notice, and cancellation is only through the official form. I can resend you a copy of the signed document if you want."</em></p>
+  </div>
+
+  <div class="quick-ref">
+    <h2>Quick Reference</h2>
+    <dl>
+      <dt>Policy headlines</dt>
+      <dd>6-month minimum, one final payment, 1 month notice, form-only cancellation</dd>
+
+      <dt>Tracker dashboard</dt>
+      <dd><a href="https://pa-cancellation-tracker-production.up.railway.app">pa-cancellation-tracker-production.up.railway.app</a></dd>
+
+      <dt>Cancellation form</dt>
+      <dd><a href="https://physiqueacademy.com/refunds-cancellations">physiqueacademy.com/refunds-cancellations</a></dd>
+
+      <dt>Slack channel</dt>
+      <dd><code>#cancellations</code></dd>
+
+      <dt>Full team guide</dt>
+      <dd><a href="../">moghees-hub.github.io/pa-cancellation-system</a></dd>
+    </dl>
+  </div>
+
+  <footer>
+    Physique Academy &middot; Coaches Guide &middot; Last updated 10 June 2026
+  </footer>
+
+</main>
+
+</body>
+</html>
